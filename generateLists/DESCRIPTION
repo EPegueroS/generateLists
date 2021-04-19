@@ -1,0 +1,14 @@
+Package: generateLists
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Esteban Peguero Sanchez
+Maintainer: Esteban Peguero Sanchez <esteban.peguero@gmail.com>
+Description: Tools to generate diverse sets of words
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

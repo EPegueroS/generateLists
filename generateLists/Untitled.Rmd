@@ -1,0 +1,54 @@
+---
+title: "Instructions"
+output: html_notebook
+---
+
+The package is provided as a compressed file.  
+
+It contains all the required functions and a simple unit test.
+Please install as:  
+install.packages("generateLists_0.1.0.tgz", repos = NULL, type = .Platform$pkgType)
+
+Generate the required params
+```{r}
+alphabet <- c("A", "C", "G", "T")
+word_length <- 6
+min_distance <- 3
+required_words <- 96
+```
+
+```{r}
+result <-
+  generateLists::generateLists(alphabet = alphabet,
+                word_length = word_length,
+                required_words = required_words,
+                min_dist = min_distance)
+```
+
+Access the documentation:
+```{r}
+?generateLists::generateLists
+```
+
+
+Return the distance matrix:
+```{r}
+m <- matrix(nrow = length(tt), ncol = length(tt))
+i <- 0
+j <- 0
+m_names <- vector(length = length(tt))
+for (w1 in tt) {
+  i <- i + 1
+  j <- 0
+  m_names[i] <- paste(w1, collapse = "")
+  for (w2 in tt) {
+    j <- j + 1
+    m[i,j] <- sum(w1 != w2)
+  }
+}
+colnames(m) <- m_names
+rownames(m) <- m_names
+m
+```
+
+
